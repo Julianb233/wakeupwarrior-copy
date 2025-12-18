@@ -3,841 +3,304 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Activate Your Power | Wake Up Warrior Challenge</title>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>Wake Up Warrior Challenge - Activate Your Power</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://fast.wistia.com/assets/external/E-v1.js" async></script>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Open Sans', sans-serif;
-            background-color: #101111;
-            color: #ffffff;
-            line-height: 1.6;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Header */
-        header {
-            background: linear-gradient(180deg, #000000 0%, #101111 100%);
-            padding: 15px 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 1px solid #222;
-        }
-
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .logo {
-            font-family: 'Oswald', sans-serif;
-            font-size: 28px;
-            font-weight: 700;
-            color: #fff;
-            text-decoration: none;
-            letter-spacing: 2px;
-        }
-
-        .logo span {
-            color: #c9a227;
-        }
-
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            margin-left: 30px;
-            font-weight: 600;
-            text-transform: uppercase;
-            font-size: 14px;
-            letter-spacing: 1px;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: #c9a227;
-        }
-
-        /* Hero Section */
-        .hero {
-            padding: 140px 20px 80px;
-            text-align: center;
-            background: linear-gradient(180deg, #101111 0%, #1a1a1a 50%, #101111 100%);
-        }
-
-        .hero-badge {
-            display: inline-block;
-            background: linear-gradient(135deg, #c9a227 0%, #a88a1f 100%);
-            color: #000;
-            padding: 8px 25px;
-            border-radius: 30px;
-            font-weight: 700;
-            font-size: 14px;
-            text-transform: uppercase;
-            margin-bottom: 30px;
-            letter-spacing: 1px;
-        }
-
-        .hero h1 {
-            font-family: 'Oswald', sans-serif;
-            font-size: 48px;
-            font-weight: 700;
-            text-transform: uppercase;
-            margin-bottom: 20px;
-            line-height: 1.2;
-        }
-
-        .hero h1 span {
-            color: #c9a227;
-        }
-
-        .hero-subtitle {
-            font-size: 22px;
-            color: #b0b0b0;
-            max-width: 800px;
-            margin: 0 auto 30px;
-            line-height: 1.5;
-        }
-
-        .hero-stat {
-            font-size: 18px;
-            color: #c9a227;
-            font-weight: 700;
-            margin-bottom: 40px;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: linear-gradient(135deg, #c9a227 0%, #dab82e 50%, #c9a227 100%);
-            color: #000;
-            padding: 20px 50px;
-            font-size: 20px;
-            font-weight: 700;
-            text-transform: uppercase;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: all 0.3s;
-            border: none;
-            cursor: pointer;
-            letter-spacing: 1px;
-            box-shadow: 0 4px 15px rgba(201, 162, 39, 0.4);
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(201, 162, 39, 0.6);
-        }
-
-        .cta-secondary {
-            background: #0174c7;
-            color: #fff;
-            box-shadow: 0 4px 15px rgba(1, 116, 199, 0.4);
-        }
-
-        .cta-secondary:hover {
-            box-shadow: 0 8px 25px rgba(1, 116, 199, 0.6);
-        }
-
-        /* Video Section */
-        .video-section {
-            padding: 60px 20px;
-            background: #0a0a0a;
-        }
-
-        .video-wrapper {
-            max-width: 900px;
-            margin: 0 auto;
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-            background: #000;
-            border: 3px solid #c9a227;
-            border-radius: 10px;
-            overflow: hidden;
-        }
-
-        .video-placeholder {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
-        }
-
-        .play-button {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, #c9a227 0%, #dab82e 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: transform 0.3s;
-        }
-
-        .play-button:hover {
-            transform: scale(1.1);
-        }
-
-        .play-button::after {
-            content: '';
-            width: 0;
-            height: 0;
-            border-left: 25px solid #000;
-            border-top: 15px solid transparent;
-            border-bottom: 15px solid transparent;
-            margin-left: 5px;
-        }
-
-        .video-text {
-            color: #fff;
-            font-size: 18px;
-            margin-top: 20px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        /* Features Section */
-        .features {
-            padding: 80px 20px;
-            background: #101111;
-        }
-
-        .section-title {
-            font-family: 'Oswald', sans-serif;
-            font-size: 42px;
-            text-align: center;
-            text-transform: uppercase;
-            margin-bottom: 20px;
-        }
-
-        .section-title span {
-            color: #c9a227;
-        }
-
-        .section-subtitle {
-            text-align: center;
-            color: #888;
-            font-size: 18px;
-            max-width: 700px;
-            margin: 0 auto 60px;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        .feature-card {
-            background: linear-gradient(135deg, #1a1a1a 0%, #151515 100%);
-            border: 1px solid #2a2a2a;
-            border-radius: 10px;
-            padding: 35px;
-            transition: all 0.3s;
-        }
-
-        .feature-card:hover {
-            border-color: #c9a227;
-            transform: translateY(-5px);
-        }
-
-        .feature-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #c9a227 0%, #a88a1f 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 20px;
-            font-size: 28px;
-        }
-
-        .feature-card h3 {
-            font-family: 'Oswald', sans-serif;
-            font-size: 24px;
-            text-transform: uppercase;
-            margin-bottom: 15px;
-            color: #fff;
-        }
-
-        .feature-card p {
-            color: #888;
-            line-height: 1.7;
-        }
-
-        /* What You Get Section */
-        .included {
-            padding: 80px 20px;
-            background: linear-gradient(180deg, #0a0a0a 0%, #101111 100%);
-        }
-
-        .included-list {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .included-item {
-            display: flex;
-            align-items: flex-start;
-            padding: 25px 0;
-            border-bottom: 1px solid #222;
-        }
-
-        .included-check {
-            width: 30px;
-            height: 30px;
-            background: #c9a227;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 20px;
-            flex-shrink: 0;
-            font-weight: bold;
-            color: #000;
-        }
-
-        .included-content h4 {
-            font-family: 'Oswald', sans-serif;
-            font-size: 20px;
-            text-transform: uppercase;
-            margin-bottom: 8px;
-        }
-
-        .included-content p {
-            color: #888;
-        }
-
-        /* Testimonials */
-        .testimonials {
-            padding: 80px 20px;
-            background: #101111;
-        }
-
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        .testimonial-card {
-            background: linear-gradient(135deg, #1a1a1a 0%, #151515 100%);
-            border: 1px solid #2a2a2a;
-            border-radius: 10px;
-            padding: 35px;
-        }
-
-        .testimonial-stars {
-            color: #c9a227;
-            font-size: 20px;
-            margin-bottom: 15px;
-        }
-
-        .testimonial-text {
-            font-style: italic;
-            color: #ccc;
-            margin-bottom: 20px;
-            line-height: 1.8;
-        }
-
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-        }
-
-        .author-avatar {
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, #c9a227 0%, #a88a1f 100%);
-            border-radius: 50%;
-            margin-right: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            color: #000;
-        }
-
-        .author-info h5 {
-            font-family: 'Oswald', sans-serif;
-            text-transform: uppercase;
-        }
-
-        .author-info p {
-            color: #888;
-            font-size: 14px;
-        }
-
-        /* Pricing Section */
-        .pricing {
-            padding: 80px 20px;
-            background: linear-gradient(180deg, #0a0a0a 0%, #101111 50%, #0a0a0a 100%);
-            text-align: center;
-        }
-
-        .pricing-box {
-            max-width: 600px;
-            margin: 0 auto;
-            background: linear-gradient(135deg, #1a1a1a 0%, #151515 100%);
-            border: 3px solid #c9a227;
-            border-radius: 15px;
-            padding: 50px 40px;
-            position: relative;
-        }
-
-        .pricing-badge {
-            position: absolute;
-            top: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: #c9a227;
-            color: #000;
-            padding: 8px 30px;
-            font-weight: 700;
-            text-transform: uppercase;
-            border-radius: 20px;
-            font-size: 14px;
-        }
-
-        .price-original {
-            font-size: 24px;
-            color: #666;
-            text-decoration: line-through;
-            margin-bottom: 10px;
-        }
-
-        .price-current {
-            font-family: 'Oswald', sans-serif;
-            font-size: 72px;
-            font-weight: 700;
-            color: #c9a227;
-            margin-bottom: 10px;
-        }
-
-        .price-current sup {
-            font-size: 36px;
-            top: -20px;
-            position: relative;
-        }
-
-        .price-note {
-            color: #888;
-            margin-bottom: 30px;
-        }
-
-        .pricing-features {
-            text-align: left;
-            margin-bottom: 30px;
-        }
-
-        .pricing-feature {
-            display: flex;
-            align-items: center;
-            padding: 12px 0;
-            border-bottom: 1px solid #222;
-        }
-
-        .pricing-feature:last-child {
-            border-bottom: none;
-        }
-
-        .pricing-feature span {
-            color: #c9a227;
-            margin-right: 15px;
-            font-size: 18px;
-        }
-
-        /* CTA Section */
-        .final-cta {
-            padding: 100px 20px;
-            background: linear-gradient(180deg, #101111 0%, #1a1a1a 50%, #101111 100%);
-            text-align: center;
-        }
-
-        .final-cta h2 {
-            font-family: 'Oswald', sans-serif;
-            font-size: 48px;
-            text-transform: uppercase;
-            margin-bottom: 20px;
-        }
-
-        .final-cta h2 span {
-            color: #c9a227;
-        }
-
-        .final-cta p {
-            font-size: 20px;
-            color: #888;
-            max-width: 600px;
-            margin: 0 auto 40px;
-        }
-
-        /* Footer */
-        footer {
-            background: #0a0a0a;
-            padding: 40px 20px;
-            text-align: center;
-            border-top: 1px solid #222;
-        }
-
-        .footer-links {
-            margin-bottom: 20px;
-        }
-
-        .footer-links a {
-            color: #666;
-            text-decoration: none;
-            margin: 0 15px;
-            font-size: 14px;
-            transition: color 0.3s;
-        }
-
-        .footer-links a:hover {
-            color: #c9a227;
-        }
-
-        .footer-disclaimer {
-            color: #444;
-            font-size: 12px;
-            max-width: 800px;
-            margin: 20px auto 0;
-            line-height: 1.6;
-        }
-
-        .copyright {
-            color: #666;
-            font-size: 14px;
-        }
-
-        /* Responsive */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Open Sans', sans-serif; background-color: #101111; color: #ffffff; line-height: 1.6; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        header { background: #000000; padding: 15px 0; position: fixed; width: 100%; top: 0; z-index: 1000; border-bottom: 1px solid #222; }
+        .header-content { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .logo img { height: 50px; }
+        .logo-text { font-family: 'Montserrat', sans-serif; font-size: 24px; font-weight: 800; color: #fff; text-decoration: none; text-transform: uppercase; letter-spacing: 1px; }
+        nav { display: flex; gap: 20px; }
+        nav a { color: #fff; text-decoration: none; font-weight: 600; text-transform: uppercase; font-size: 14px; padding: 10px 20px; border: 2px solid #fff; transition: all 0.3s; }
+        nav a:hover { background: #fff; color: #000; }
+        nav a.members { background: transparent; border-color: #666; }
+        .hero { padding: 120px 20px 60px; text-align: center; background: #101111; }
+        .hero-image { max-width: 800px; margin: 0 auto 30px; }
+        .hero-image img { width: 100%; height: auto; }
+        .hero h1 { font-family: 'Montserrat', sans-serif; font-size: 42px; font-weight: 800; text-transform: uppercase; margin-bottom: 20px; line-height: 1.2; color: #fff; }
+        .hero h1 span { color: #ff4545; }
+        .hero-subtitle { font-size: 24px; color: #fff; max-width: 900px; margin: 0 auto 20px; line-height: 1.4; font-weight: 600; }
+        .hero-subtitle span { color: #ff4545; }
+        .hero-body { font-size: 18px; color: #ccc; max-width: 800px; margin: 0 auto 30px; }
+        .hero-body span { color: #ff4545; font-weight: 700; }
+        .cta-button { display: inline-block; background: #ff4545; color: #fff; padding: 20px 60px; font-size: 22px; font-weight: 800; text-transform: uppercase; text-decoration: none; border-radius: 5px; transition: all 0.3s; border: none; cursor: pointer; letter-spacing: 1px; font-family: 'Montserrat', sans-serif; }
+        .cta-button:hover { background: #e03030; transform: scale(1.05); }
+        .video-section { padding: 60px 20px; background: #0a0a0a; }
+        .video-wrapper { max-width: 900px; margin: 0 auto; position: relative; background: #000; border-radius: 10px; overflow: hidden; }
+        .wistia_responsive_padding { padding: 56.25% 0 0 0; position: relative; }
+        .wistia_responsive_wrapper { height: 100%; left: 0; position: absolute; top: 0; width: 100%; }
+        .pricing-section { padding: 80px 20px; background: linear-gradient(180deg, #101111 0%, #1a1a1a 100%); text-align: center; }
+        .pricing-headline { font-family: 'Montserrat', sans-serif; font-size: 36px; font-weight: 800; text-transform: uppercase; margin-bottom: 30px; line-height: 1.3; }
+        .price-strike { color: #666; text-decoration: line-through; }
+        .price-discount { color: #ff4545; text-decoration: line-through; }
+        .price-final { color: #00ff00; font-size: 48px; }
+        .features-section { padding: 80px 20px; background: #101111; }
+        .features-content { display: flex; align-items: center; gap: 60px; max-width: 1100px; margin: 0 auto; }
+        .features-image { flex: 1; max-width: 500px; }
+        .features-image img { width: 100%; border-radius: 10px; }
+        .features-list { flex: 1; }
+        .feature-item { display: flex; align-items: flex-start; margin-bottom: 25px; padding: 20px; background: rgba(255,255,255,0.05); border-radius: 10px; border-left: 4px solid #ff4545; }
+        .feature-icon { width: 50px; height: 50px; background: #ff4545; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 20px; flex-shrink: 0; font-weight: bold; font-size: 20px; }
+        .feature-text h3 { font-family: 'Montserrat', sans-serif; font-size: 18px; font-weight: 700; margin-bottom: 8px; color: #fff; }
+        .feature-text p { color: #aaa; font-size: 14px; }
+        .value-section { padding: 80px 20px; background: #0a0a0a; text-align: center; }
+        .value-section h2 { font-family: 'Montserrat', sans-serif; font-size: 48px; font-weight: 900; text-transform: uppercase; margin-bottom: 20px; }
+        .value-section h2 span { color: #ff4545; }
+        .value-subtitle { font-size: 24px; color: #ccc; margin-bottom: 30px; font-weight: 600; }
+        .value-tags { display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; margin-bottom: 40px; }
+        .value-tag { background: linear-gradient(135deg, #ff4545 0%, #cc0000 100%); padding: 15px 30px; border-radius: 5px; font-weight: 700; text-transform: uppercase; font-size: 14px; }
+        .value-description { max-width: 800px; margin: 0 auto; font-size: 18px; color: #ccc; line-height: 1.8; }
+        .testimonials-section { padding: 80px 20px; background: #101111; }
+        .testimonials-section h2 { font-family: 'Montserrat', sans-serif; font-size: 36px; font-weight: 800; text-align: center; margin-bottom: 50px; text-transform: uppercase; }
+        .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; }
+        .testimonial-card { background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%); border: 1px solid #333; border-radius: 15px; padding: 30px; transition: all 0.3s; }
+        .testimonial-card:hover { border-color: #ff4545; transform: translateY(-5px); }
+        .testimonial-quote { font-size: 20px; font-weight: 700; color: #ff4545; margin-bottom: 20px; font-style: italic; line-height: 1.4; }
+        .testimonial-bio { color: #aaa; font-size: 14px; line-height: 1.7; margin-bottom: 20px; }
+        .testimonial-name { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 16px; color: #fff; }
+        .value-stack { padding: 80px 20px; background: #0a0a0a; }
+        .value-stack h2 { font-family: 'Montserrat', sans-serif; font-size: 36px; font-weight: 800; text-align: center; margin-bottom: 50px; text-transform: uppercase; }
+        .stack-table { max-width: 800px; margin: 0 auto 40px; background: #1a1a1a; border-radius: 15px; overflow: hidden; }
+        .stack-row { display: flex; justify-content: space-between; padding: 20px 30px; border-bottom: 1px solid #333; }
+        .stack-row:last-child { border-bottom: none; }
+        .stack-row.total { background: #ff4545; font-weight: 800; font-size: 20px; }
+        .stack-row.final { background: linear-gradient(135deg, #00aa00 0%, #008800 100%); font-weight: 900; font-size: 28px; }
+        .stack-item { flex: 1; }
+        .stack-value { text-align: right; font-weight: 700; color: #00ff00; }
+        .stack-row.total .stack-value, .stack-row.final .stack-value { color: #fff; }
+        .final-cta { padding: 100px 20px; background: linear-gradient(180deg, #101111 0%, #000 100%); text-align: center; }
+        .final-cta h2 { font-family: 'Montserrat', sans-serif; font-size: 48px; font-weight: 900; text-transform: uppercase; margin-bottom: 30px; }
+        .final-cta h2 span { color: #ff4545; }
+        footer { background: #000; padding: 40px 20px; text-align: center; border-top: 1px solid #222; }
+        .footer-links { margin-bottom: 20px; }
+        .footer-links a { color: #666; text-decoration: none; margin: 0 15px; font-size: 12px; text-transform: uppercase; }
+        .footer-links a:hover { color: #ff4545; }
+        .copyright { color: #444; font-size: 12px; margin-bottom: 15px; }
+        .disclaimer { color: #333; font-size: 11px; max-width: 600px; margin: 0 auto; }
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 32px;
-            }
-
-            .hero-subtitle {
-                font-size: 18px;
-            }
-
-            .section-title {
-                font-size: 32px;
-            }
-
-            .features-grid,
-            .testimonials-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .price-current {
-                font-size: 56px;
-            }
-
-            .final-cta h2 {
-                font-size: 32px;
-            }
-
-            nav {
-                display: none;
-            }
+            .hero h1 { font-size: 28px; }
+            .hero-subtitle { font-size: 18px; }
+            .features-content { flex-direction: column; }
+            .pricing-headline { font-size: 24px; }
+            .price-final { font-size: 36px; }
+            .value-section h2, .final-cta h2 { font-size: 32px; }
+            .testimonials-grid { grid-template-columns: 1fr; }
+            nav { display: none; }
         }
-
-        /* Animation */
-        @keyframes pulse {
-            0%, 100% {
-                box-shadow: 0 0 0 0 rgba(201, 162, 39, 0.4);
-            }
-            50% {
-                box-shadow: 0 0 0 15px rgba(201, 162, 39, 0);
-            }
-        }
-
-        .pulse {
-            animation: pulse 2s infinite;
-        }
+        @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+        .pulse { animation: pulse 2s infinite; }
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header>
         <div class="header-content">
-            <a href="#" class="logo">WUW <span>CHALLENGE</span></a>
+            <a href="#" class="logo-text">Wake Up Warrior</a>
             <nav>
-                <a href="#pricing">Join</a>
-                <a href="#">Members</a>
+                <a href="https://challenge.wakeupwarrior.com/challenge-checkout-page">Join</a>
+                <a href="https://wakeupwarrior.com/hub/" class="members">Members</a>
             </nav>
         </div>
     </header>
-
-    <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <div class="hero-badge">Activate Your Power</div>
+            <div class="hero-image">
+                <img src="https://wakeupwarrior.com/wp-content/uploads/2021/04/WARRIOR-EXPANSION.png" alt="Warrior Expansion">
+            </div>
             <h1>Watch the '<span>Warrior EXPANSION</span>' Movie Below to Discover...</h1>
-            <p class="hero-subtitle">How to Unlock 'Unlimited' POWER, Profits & Purpose In Your Business, Marriage & Life Starting Right Now!</p>
-            <p class="hero-stat">11,308+ Have Taken This Life-Altering Challenge Already</p>
-            <a href="#pricing" class="cta-button pulse">Get Started NOW!</a>
+            <p class="hero-subtitle">How to Unlock '<span>Unlimited</span>' POWER, Profits & Purpose In Your Business, Marriage & Life Starting Right Now!</p>
+            <p class="hero-body">'<span>Skeptical?</span>' Good. Just Watch. <span>11,308+</span> Have Taken This Life-Altering Challenge Already. Do You CHOOSE to Be NEXT?</p>
+            <a href="https://challenge.wakeupwarrior.com/challenge-checkout-page" class="cta-button pulse">Get Started NOW!</a>
         </div>
     </section>
-
-    <!-- Video Section -->
     <section class="video-section">
         <div class="container">
             <div class="video-wrapper">
-                <div class="video-placeholder">
-                    <div class="play-button"></div>
-                    <p class="video-text">Watch the Warrior Expansion Movie</p>
+                <div class="wistia_responsive_padding">
+                    <div class="wistia_responsive_wrapper">
+                        <div class="wistia_embed wistia_async_86uvxepgvy videoFoam=true" style="height:100%;position:relative;width:100%">
+                            <div class="wistia_swatch" style="height:100%;left:0;opacity:0;overflow:hidden;position:absolute;top:0;transition:opacity 200ms;width:100%;">
+                                <img src="https://fast.wistia.com/embed/medias/86uvxepgvy/swatch" style="filter:blur(5px);height:100%;object-fit:contain;width:100%;" alt="" aria-hidden="true" onload="this.parentNode.style.opacity=1;" />
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Features Section -->
-    <section class="features">
+    <section class="pricing-section">
         <div class="container">
-            <h2 class="section-title">What Makes This <span>Different</span></h2>
-            <p class="section-subtitle">The Warrior Challenge is a proven system designed to unlock exponential growth in every area of your life.</p>
-
-            <div class="features-grid">
-                <div class="feature-card">
+            <h2 class="pricing-headline">Instantly Start Your 'ACTIVATE YOUR POWER' Warrior Challenge RIGHT NOW For Only <span class="price-strike">$997</span> <span class="price-discount">$497</span> <span class="price-final">$297 TODAY!</span></h2>
+            <a href="https://challenge.wakeupwarrior.com/challenge-checkout-page" class="cta-button pulse">HELL YES! I AM ALL IN!</a>
+        </div>
+    </section>
+    <section class="features-section">
+        <div class="features-content">
+            <div class="features-image">
+                <img src="https://wakeupwarrior.com/wp-content/uploads/2021/05/WUWC-WYG-V1.png" alt="What You Get">
+            </div>
+            <div class="features-list">
+                <div class="feature-item">
                     <div class="feature-icon">18</div>
-                    <h3>18 Missions</h3>
-                    <p>Strategic missions designed to build exponential momentum in your business, body, relationships, and spiritual life.</p>
+                    <div class="feature-text">
+                        <h3>18 Simple Yet Powerful Missions</h3>
+                        <p>For exponential momentum across Body, Being, Balance & Business</p>
+                    </div>
                 </div>
-                <div class="feature-card">
+                <div class="feature-item">
                     <div class="feature-icon">12</div>
-                    <h3>12 Evolutions</h3>
-                    <p>Powerful exercises to eradicate limiting beliefs and breakthrough the mental barriers holding you back from greatness.</p>
+                    <div class="feature-text">
+                        <h3>12 Immersive Evolutions</h3>
+                        <p>Designed to eradicate destructive beliefs and pivot your life trajectory</p>
+                    </div>
                 </div>
-                <div class="feature-card">
+                <div class="feature-item">
                     <div class="feature-icon">2</div>
-                    <h3>Two Assessments</h3>
-                    <p>Comprehensive assessments to identify exactly where your power leaks are occurring and how to plug them immediately.</p>
+                    <div class="feature-text">
+                        <h3>Two (2) Assessments</h3>
+                        <p>Identifying your power and certainty leaks</p>
+                    </div>
                 </div>
-                <div class="feature-card">
+                <div class="feature-item">
                     <div class="feature-icon">60</div>
-                    <h3>60-Day App Access</h3>
-                    <p>Full access to the WarriorApp with daily guidance, tracking, and accountability to ensure you complete the challenge.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- What's Included Section -->
-    <section class="included">
-        <div class="container">
-            <h2 class="section-title">What's <span>Included</span></h2>
-            <p class="section-subtitle">Everything you need to transform your life in the next 60 days.</p>
-
-            <div class="included-list">
-                <div class="included-item">
-                    <div class="included-check">&#10003;</div>
-                    <div class="included-content">
-                        <h4>30 Daily Missions</h4>
-                        <p>Step-by-step guidance to activate power in Body, Being, Balance, and Business.</p>
+                    <div class="feature-text">
+                        <h3>60 Days of Unrestricted WarriorApp Access</h3>
+                        <p>With production tools to track your transformation</p>
                     </div>
                 </div>
-                <div class="included-item">
-                    <div class="included-check">&#10003;</div>
-                    <div class="included-content">
-                        <h4>30 Coaching Letters</h4>
-                        <p>Personal coaching from Garrett J. White delivered straight to your inbox daily.</p>
+                <div class="feature-item">
+                    <div class="feature-icon">∞</div>
+                    <div class="feature-text">
+                        <h3>Lifetime Access to WUW Challenge Facebook Group</h3>
+                        <p>Connect with the warrior community</p>
                     </div>
                 </div>
-                <div class="included-item">
-                    <div class="included-check">&#10003;</div>
-                    <div class="included-content">
-                        <h4>Lifetime Facebook Group Access</h4>
-                        <p>Join thousands of warriors on the same journey for support and accountability.</p>
-                    </div>
-                </div>
-                <div class="included-item">
-                    <div class="included-check">&#10003;</div>
-                    <div class="included-content">
-                        <h4>Complete WarriorBox Audio Edition</h4>
-                        <p>6 full audiobooks covering the Warrior's Way methodology for lasting transformation.</p>
-                    </div>
-                </div>
-                <div class="included-item">
-                    <div class="included-check">&#10003;</div>
-                    <div class="included-content">
-                        <h4>Bonus Training Videos</h4>
-                        <p>Exclusive video content to accelerate your results and deepen your understanding.</p>
+                <div class="feature-item">
+                    <div class="feature-icon">6</div>
+                    <div class="feature-text">
+                        <h3>Complete WarriorBox AUDIO Edition</h3>
+                        <p>6 powerful audiobooks included instantly</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Testimonials Section -->
-    <section class="testimonials">
+    <section class="value-section">
         <div class="container">
-            <h2 class="section-title">Real <span>Results</span></h2>
-            <p class="section-subtitle">Hear from warriors who have transformed their lives through this challenge.</p>
-
+            <h2>Listen. This. Simply. <span>WORKS.</span></h2>
+            <p class="value-subtitle">This Is NOT Guess-Work, Hyped-Up Hippie BS, Or Recycled Ideas. So What Is It?</p>
+            <div class="value-tags">
+                <span class="value-tag">A NO-BS FORMULA</span>
+                <span class="value-tag">A SIMPLE FRAMEWORK</span>
+                <span class="value-tag">A PROVEN BLUEPRINT</span>
+                <span class="value-tag">A GAMIFIED SYSTEM</span>
+            </div>
+            <p class="value-description">After a decade of creating proven results inside the lives of thousands of KINGS & QUEENS... It is now no longer even arguable. Instead, it has become <strong>undeniable</strong>. This Simply WORKS Every Time A Warrior Shows Up Committed to IMPLEMENT the Warrior's Way.</p>
+        </div>
+    </section>
+    <section class="testimonials-section">
+        <div class="container">
+            <h2>Just Listen to Some of Latest Graduates of the Challenge...</h2>
             <div class="testimonials-grid">
                 <div class="testimonial-card">
-                    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                    <p class="testimonial-text">"I 10X'd my business in 6 months after completing this challenge. The principles taught here completely shifted my mindset and gave me the tools to scale."</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">JM</div>
-                        <div class="author-info">
-                            <h5>Jason Mitchell</h5>
-                            <p>Entrepreneur</p>
-                        </div>
-                    </div>
+                    <p class="testimonial-quote">"I 10X'D My Business, and My Connection with My Wife & Daughters Is Off the Charts..."</p>
+                    <p class="testimonial-bio">Grew business from six-figures yearly to $1M monthly; ignited marriage and parenting with purpose, love, intimacy and connection.</p>
+                    <p class="testimonial-name">— Russ Perry</p>
                 </div>
                 <div class="testimonial-card">
-                    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                    <p class="testimonial-text">"My marriage was on the rocks. After this challenge, we're closer than we've ever been. This isn't just business training - it's life transformation."</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">DK</div>
-                        <div class="author-info">
-                            <h5>David Kowalski</h5>
-                            <p>Business Owner</p>
-                        </div>
-                    </div>
+                    <p class="testimonial-quote">"How Am I Gonna Raise a Man When I'm Not Even One? What Am I Gonna Do?"</p>
+                    <p class="testimonial-bio">Grew business from $300k/yr to $3.5M, fast-tracking toward $7M. Faced the "Trifecta of Insanity" and found his fight again.</p>
+                    <p class="testimonial-name">— Nick</p>
                 </div>
                 <div class="testimonial-card">
-                    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                    <p class="testimonial-text">"Lost 45 pounds and doubled my income. The daily missions kept me accountable and the community pushed me to be better every single day."</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">RS</div>
-                        <div class="author-info">
-                            <h5>Ryan Sullivan</h5>
-                            <p>Sales Executive</p>
-                        </div>
-                    </div>
+                    <p class="testimonial-quote">"What I Thought I Wanted... I Was There. But I Felt Empty, Lost & Miserable."</p>
+                    <p class="testimonial-bio">Scared to believe "HAVING IT ALL" was possible; made Warrior his priority and found answers, purpose, and divine desire to create.</p>
+                    <p class="testimonial-name">— Cullen</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-quote">"I Had No Power As a Man Anymore to Do What I Knew I Was Able to Do..."</p>
+                    <p class="testimonial-bio">Faced 13+ year friendship breakdown, lost 6-figure deal, son struggling with addiction. Found lost power and purpose as businessman and leader.</p>
+                    <p class="testimonial-name">— Michael</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-quote">"My Wife Hated Me, My Daughters Hated Me... I Was Blind to What I Had."</p>
+                    <p class="testimonial-bio">High-stakes situation—nearly lost daughters, wife, business, and own life. Genuine example of transformation.</p>
+                    <p class="testimonial-name">— Jim</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-quote">"I Knew I Was On the Path of Losing My Business & Marriage..."</p>
+                    <p class="testimonial-bio">Came to Warrior knowing current course would result in losing everything. Received tools to explode revenue while healing marriage.</p>
+                    <p class="testimonial-name">— Shahn</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-quote">"I Was Afraid She Couldn't Handle Me."</p>
+                    <p class="testimonial-bio">Successful gym owner seeking deeper fire, purpose and connection. He and wife Katy doubled business and intimacy simultaneously.</p>
+                    <p class="testimonial-name">— Jesse & Katy</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-quote">"Changed the Legacy of My Bloodline."</p>
+                    <p class="testimonial-bio">Couple on verge of burning everything—business, marriage, built lives. Used Warrior to double down on marriage and business; created empire together.</p>
+                    <p class="testimonial-name">— AZ & Wife</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-quote">"I Had Built, Lost and Built Again. I Wanted Guarantees This Time..."</p>
+                    <p class="testimonial-bio">Successful financial planner on second ascent; seeking better system for growth while maintaining family time. Brotherhood Member #1.</p>
+                    <p class="testimonial-name">— Michael Isom</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-quote">"I Was Looking For a Group of Powerful Men I Could Relate to."</p>
+                    <p class="testimonial-bio">eCommerce entrepreneur; 70MM company, healthy, great family. Searching for powerful association with 4-dimensional men.</p>
+                    <p class="testimonial-name">— Rick Steele</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-quote">"I Got More Out of This Than My Masters In Business..."</p>
+                    <p class="testimonial-bio">Sought modern business strategy and marketing; gained more than planned—brotherhood and tools for better fatherhood.</p>
+                    <p class="testimonial-name">— Alan Earl</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-quote">"Already Being Successful, I Redrew the Line for What Was Great for Me."</p>
+                    <p class="testimonial-bio">Serial entrepreneur redefining "Having It All" completely; expanded business without burnout; 10X'd income.</p>
+                    <p class="testimonial-name">— Greg Anderson</p>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Pricing Section -->
-    <section class="pricing" id="pricing">
+    <section class="value-stack">
         <div class="container">
-            <h2 class="section-title">Join The <span>Challenge</span></h2>
-            <p class="section-subtitle">Limited time offer - lock in this price before it increases.</p>
-
-            <div class="pricing-box">
-                <div class="pricing-badge">Best Value</div>
-                <p class="price-original">$997</p>
-                <p class="price-current"><sup>$</sup>297</p>
-                <p class="price-note">One-time payment - Lifetime access</p>
-
-                <div class="pricing-features">
-                    <div class="pricing-feature">
-                        <span>&#10003;</span>
-                        <p>30 Daily Missions & Coaching Letters</p>
-                    </div>
-                    <div class="pricing-feature">
-                        <span>&#10003;</span>
-                        <p>60-Day WarriorApp Access</p>
-                    </div>
-                    <div class="pricing-feature">
-                        <span>&#10003;</span>
-                        <p>Lifetime Facebook Community Access</p>
-                    </div>
-                    <div class="pricing-feature">
-                        <span>&#10003;</span>
-                        <p>6 Complete WarriorBox Audiobooks</p>
-                    </div>
-                    <div class="pricing-feature">
-                        <span>&#10003;</span>
-                        <p>Bonus Training Videos & Resources</p>
-                    </div>
-                </div>
-
-                <a href="#" class="cta-button pulse">HELL YES! I AM ALL IN!</a>
+            <h2>Here's Everything You Get Today</h2>
+            <div class="stack-table">
+                <div class="stack-row"><span class="stack-item">30 Power Activating Missions from Garrett J. White</span><span class="stack-value">$1,997</span></div>
+                <div class="stack-row"><span class="stack-item">30 Coaching Letters from Garrett J. White</span><span class="stack-value">$810</span></div>
+                <div class="stack-row"><span class="stack-item">60 Days Unrestricted WarriorApp Access</span><span class="stack-value">$398</span></div>
+                <div class="stack-row"><span class="stack-item">BONUS: WUW Facebook Accountability Group</span><span class="stack-value">$497</span></div>
+                <div class="stack-row"><span class="stack-item">BONUS: WarriorBox Audio Edition (6 AudioBooks)</span><span class="stack-value">$497</span></div>
+                <div class="stack-row"><span class="stack-item">BONUS: 5 Warrior's Way Protocol Video Courses</span><span class="stack-value">$997</span></div>
+                <div class="stack-row total"><span class="stack-item">Total Package Value</span><span class="stack-value">$5,196</span></div>
+                <div class="stack-row final"><span class="stack-item">YOUR PRICE TODAY</span><span class="stack-value">$297</span></div>
             </div>
+            <div style="text-align: center;"><a href="https://challenge.wakeupwarrior.com/challenge-checkout-page" class="cta-button pulse">HELL YES! I AM ALL IN!</a></div>
         </div>
     </section>
-
-    <!-- Final CTA Section -->
     <section class="final-cta">
         <div class="container">
-            <h2>Ready To <span>Activate</span> Your Power?</h2>
-            <p>Join 11,308+ warriors who have transformed their lives. Your breakthrough starts today.</p>
-            <a href="#pricing" class="cta-button pulse">Get Started NOW!</a>
+            <h2>It's Time to Get <span>Off the Sidelines.</span></h2>
+            <p style="font-size: 20px; color: #ccc; margin-bottom: 40px; max-width: 700px; margin-left: auto; margin-right: auto;">Help you Predictably Access POWER to Produce RESULTS in ALL areas—simultaneously. Break free from limiting beliefs keeping you STUCK in scarcity.</p>
+            <a href="https://challenge.wakeupwarrior.com/challenge-checkout-page" class="cta-button pulse">HELL YES! I AM ALL IN!</a>
         </div>
     </section>
-
-    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-links">
-                <a href="#">Terms of Service</a>
-                <a href="#">Privacy Policy</a>
-                <a href="#">EULA</a>
-                <a href="#">Contact</a>
+                <a href="https://newwarriorarmory.com/terms-of-service/">Warrior Terms of Service</a>
+                <a href="https://newwarriorarmory.com/privacy-policy/">Warrior Privacy Policy</a>
+                <a href="https://newwarriorarmory.com/eula/">Warrior End User License Agreement</a>
             </div>
-            <p class="copyright">&copy; 2024 Wake Up Warrior. All Rights Reserved.</p>
-            <p class="footer-disclaimer">This site is not a part of the Facebook website or Facebook Inc. Additionally, this site is NOT endorsed by Facebook in any way. FACEBOOK is a trademark of FACEBOOK, Inc. Results may vary. The testimonials shown are real experiences from actual customers. However, these results should not be taken as typical, and your results may vary based on your individual circumstances, effort, and commitment.</p>
+            <p class="copyright">COPYRIGHT © 2023+ WARRIOR BOOK, LLC. ALL RIGHTS RESERVED.</p>
+            <p class="disclaimer">This site is not a part of the Facebook website or Facebook Inc. Additionally, this site is not endorsed by Facebook in any way. FACEBOOK is a trademark of FACEBOOK, Inc.</p>
         </div>
     </footer>
-
-    <script>
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Simple animation on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.feature-card, .testimonial-card, .included-item').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(20px)';
-            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(el);
-        });
-    </script>
 </body>
 </html>
