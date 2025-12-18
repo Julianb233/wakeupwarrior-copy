@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activate Your Power | Wake Up Warrior Challenge</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #101111;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(180deg, #000000 0%, #101111 100%);
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid #222;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-family: 'Oswald', sans-serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: #fff;
+            text-decoration: none;
+            letter-spacing: 2px;
+        }
+
+        .logo span {
+            color: #c9a227;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 30px;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 14px;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #c9a227;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 140px 20px 80px;
+            text-align: center;
+            background: linear-gradient(180deg, #101111 0%, #1a1a1a 50%, #101111 100%);
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #c9a227 0%, #a88a1f 100%);
+            color: #000;
+            padding: 8px 25px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 14px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+        }
+
+        .hero h1 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 48px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero h1 span {
+            color: #c9a227;
+        }
+
+        .hero-subtitle {
+            font-size: 22px;
+            color: #b0b0b0;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            line-height: 1.5;
+        }
+
+        .hero-stat {
+            font-size: 18px;
+            color: #c9a227;
+            font-weight: 700;
+            margin-bottom: 40px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #c9a227 0%, #dab82e 50%, #c9a227 100%);
+            color: #000;
+            padding: 20px 50px;
+            font-size: 20px;
+            font-weight: 700;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 15px rgba(201, 162, 39, 0.4);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(201, 162, 39, 0.6);
+        }
+
+        .cta-secondary {
+            background: #0174c7;
+            color: #fff;
+            box-shadow: 0 4px 15px rgba(1, 116, 199, 0.4);
+        }
+
+        .cta-secondary:hover {
+            box-shadow: 0 8px 25px rgba(1, 116, 199, 0.6);
+        }
+
+        /* Video Section */
+        .video-section {
+            padding: 60px 20px;
+            background: #0a0a0a;
+        }
+
+        .video-wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            background: #000;
+            border: 3px solid #c9a227;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .video-placeholder {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+        }
+
+        .play-button {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #c9a227 0%, #dab82e 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .play-button:hover {
+            transform: scale(1.1);
+        }
+
+        .play-button::after {
+            content: '';
+            width: 0;
+            height: 0;
+            border-left: 25px solid #000;
+            border-top: 15px solid transparent;
+            border-bottom: 15px solid transparent;
+            margin-left: 5px;
+        }
+
+        .video-text {
+            color: #fff;
+            font-size: 18px;
+            margin-top: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 80px 20px;
+            background: #101111;
+        }
+
+        .section-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: 42px;
+            text-align: center;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .section-title span {
+            color: #c9a227;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #888;
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto 60px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, #1a1a1a 0%, #151515 100%);
+            border: 1px solid #2a2a2a;
+            border-radius: 10px;
+            padding: 35px;
+            transition: all 0.3s;
+        }
+
+        .feature-card:hover {
+            border-color: #c9a227;
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #c9a227 0%, #a88a1f 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+
+        .feature-card h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 24px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        .feature-card p {
+            color: #888;
+            line-height: 1.7;
+        }
+
+        /* What You Get Section */
+        .included {
+            padding: 80px 20px;
+            background: linear-gradient(180deg, #0a0a0a 0%, #101111 100%);
+        }
+
+        .included-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .included-item {
+            display: flex;
+            align-items: flex-start;
+            padding: 25px 0;
+            border-bottom: 1px solid #222;
+        }
+
+        .included-check {
+            width: 30px;
+            height: 30px;
+            background: #c9a227;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            flex-shrink: 0;
+            font-weight: bold;
+            color: #000;
+        }
+
+        .included-content h4 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 20px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .included-content p {
+            color: #888;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 80px 20px;
+            background: #101111;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .testimonial-card {
+            background: linear-gradient(135deg, #1a1a1a 0%, #151515 100%);
+            border: 1px solid #2a2a2a;
+            border-radius: 10px;
+            padding: 35px;
+        }
+
+        .testimonial-stars {
+            color: #c9a227;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            color: #ccc;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #c9a227 0%, #a88a1f 100%);
+            border-radius: 50%;
+            margin-right: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #000;
+        }
+
+        .author-info h5 {
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+        }
+
+        .author-info p {
+            color: #888;
+            font-size: 14px;
+        }
+
+        /* Pricing Section */
+        .pricing {
+            padding: 80px 20px;
+            background: linear-gradient(180deg, #0a0a0a 0%, #101111 50%, #0a0a0a 100%);
+            text-align: center;
+        }
+
+        .pricing-box {
+            max-width: 600px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, #1a1a1a 0%, #151515 100%);
+            border: 3px solid #c9a227;
+            border-radius: 15px;
+            padding: 50px 40px;
+            position: relative;
+        }
+
+        .pricing-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #c9a227;
+            color: #000;
+            padding: 8px 30px;
+            font-weight: 700;
+            text-transform: uppercase;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+
+        .price-original {
+            font-size: 24px;
+            color: #666;
+            text-decoration: line-through;
+            margin-bottom: 10px;
+        }
+
+        .price-current {
+            font-family: 'Oswald', sans-serif;
+            font-size: 72px;
+            font-weight: 700;
+            color: #c9a227;
+            margin-bottom: 10px;
+        }
+
+        .price-current sup {
+            font-size: 36px;
+            top: -20px;
+            position: relative;
+        }
+
+        .price-note {
+            color: #888;
+            margin-bottom: 30px;
+        }
+
+        .pricing-features {
+            text-align: left;
+            margin-bottom: 30px;
+        }
+
+        .pricing-feature {
+            display: flex;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid #222;
+        }
+
+        .pricing-feature:last-child {
+            border-bottom: none;
+        }
+
+        .pricing-feature span {
+            color: #c9a227;
+            margin-right: 15px;
+            font-size: 18px;
+        }
+
+        /* CTA Section */
+        .final-cta {
+            padding: 100px 20px;
+            background: linear-gradient(180deg, #101111 0%, #1a1a1a 50%, #101111 100%);
+            text-align: center;
+        }
+
+        .final-cta h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 48px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .final-cta h2 span {
+            color: #c9a227;
+        }
+
+        .final-cta p {
+            font-size: 20px;
+            color: #888;
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+        /* Footer */
+        footer {
+            background: #0a0a0a;
+            padding: 40px 20px;
+            text-align: center;
+            border-top: 1px solid #222;
+        }
+
+        .footer-links {
+            margin-bottom: 20px;
+        }
+
+        .footer-links a {
+            color: #666;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #c9a227;
+        }
+
+        .footer-disclaimer {
+            color: #444;
+            font-size: 12px;
+            max-width: 800px;
+            margin: 20px auto 0;
+            line-height: 1.6;
+        }
+
+        .copyright {
+            color: #666;
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero-subtitle {
+                font-size: 18px;
+            }
+
+            .section-title {
+                font-size: 32px;
+            }
+
+            .features-grid,
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .price-current {
+                font-size: 56px;
+            }
+
+            .final-cta h2 {
+                font-size: 32px;
+            }
+
+            nav {
+                display: none;
+            }
+        }
+
+        /* Animation */
+        @keyframes pulse {
+            0%, 100% {
+                box-shadow: 0 0 0 0 rgba(201, 162, 39, 0.4);
+            }
+            50% {
+                box-shadow: 0 0 0 15px rgba(201, 162, 39, 0);
+            }
+        }
+
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <a href="#" class="logo">WUW <span>CHALLENGE</span></a>
+            <nav>
+                <a href="#pricing">Join</a>
+                <a href="#">Members</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-badge">Activate Your Power</div>
+            <h1>Watch the '<span>Warrior EXPANSION</span>' Movie Below to Discover...</h1>
+            <p class="hero-subtitle">How to Unlock 'Unlimited' POWER, Profits & Purpose In Your Business, Marriage & Life Starting Right Now!</p>
+            <p class="hero-stat">11,308+ Have Taken This Life-Altering Challenge Already</p>
+            <a href="#pricing" class="cta-button pulse">Get Started NOW!</a>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section class="video-section">
+        <div class="container">
+            <div class="video-wrapper">
+                <div class="video-placeholder">
+                    <div class="play-button"></div>
+                    <p class="video-text">Watch the Warrior Expansion Movie</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">What Makes This <span>Different</span></h2>
+            <p class="section-subtitle">The Warrior Challenge is a proven system designed to unlock exponential growth in every area of your life.</p>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">18</div>
+                    <h3>18 Missions</h3>
+                    <p>Strategic missions designed to build exponential momentum in your business, body, relationships, and spiritual life.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">12</div>
+                    <h3>12 Evolutions</h3>
+                    <p>Powerful exercises to eradicate limiting beliefs and breakthrough the mental barriers holding you back from greatness.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">2</div>
+                    <h3>Two Assessments</h3>
+                    <p>Comprehensive assessments to identify exactly where your power leaks are occurring and how to plug them immediately.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">60</div>
+                    <h3>60-Day App Access</h3>
+                    <p>Full access to the WarriorApp with daily guidance, tracking, and accountability to ensure you complete the challenge.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What's Included Section -->
+    <section class="included">
+        <div class="container">
+            <h2 class="section-title">What's <span>Included</span></h2>
+            <p class="section-subtitle">Everything you need to transform your life in the next 60 days.</p>
+
+            <div class="included-list">
+                <div class="included-item">
+                    <div class="included-check">&#10003;</div>
+                    <div class="included-content">
+                        <h4>30 Daily Missions</h4>
+                        <p>Step-by-step guidance to activate power in Body, Being, Balance, and Business.</p>
+                    </div>
+                </div>
+                <div class="included-item">
+                    <div class="included-check">&#10003;</div>
+                    <div class="included-content">
+                        <h4>30 Coaching Letters</h4>
+                        <p>Personal coaching from Garrett J. White delivered straight to your inbox daily.</p>
+                    </div>
+                </div>
+                <div class="included-item">
+                    <div class="included-check">&#10003;</div>
+                    <div class="included-content">
+                        <h4>Lifetime Facebook Group Access</h4>
+                        <p>Join thousands of warriors on the same journey for support and accountability.</p>
+                    </div>
+                </div>
+                <div class="included-item">
+                    <div class="included-check">&#10003;</div>
+                    <div class="included-content">
+                        <h4>Complete WarriorBox Audio Edition</h4>
+                        <p>6 full audiobooks covering the Warrior's Way methodology for lasting transformation.</p>
+                    </div>
+                </div>
+                <div class="included-item">
+                    <div class="included-check">&#10003;</div>
+                    <div class="included-content">
+                        <h4>Bonus Training Videos</h4>
+                        <p>Exclusive video content to accelerate your results and deepen your understanding.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">Real <span>Results</span></h2>
+            <p class="section-subtitle">Hear from warriors who have transformed their lives through this challenge.</p>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="testimonial-text">"I 10X'd my business in 6 months after completing this challenge. The principles taught here completely shifted my mindset and gave me the tools to scale."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">JM</div>
+                        <div class="author-info">
+                            <h5>Jason Mitchell</h5>
+                            <p>Entrepreneur</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="testimonial-text">"My marriage was on the rocks. After this challenge, we're closer than we've ever been. This isn't just business training - it's life transformation."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">DK</div>
+                        <div class="author-info">
+                            <h5>David Kowalski</h5>
+                            <p>Business Owner</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="testimonial-text">"Lost 45 pounds and doubled my income. The daily missions kept me accountable and the community pushed me to be better every single day."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">RS</div>
+                        <div class="author-info">
+                            <h5>Ryan Sullivan</h5>
+                            <p>Sales Executive</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <h2 class="section-title">Join The <span>Challenge</span></h2>
+            <p class="section-subtitle">Limited time offer - lock in this price before it increases.</p>
+
+            <div class="pricing-box">
+                <div class="pricing-badge">Best Value</div>
+                <p class="price-original">$997</p>
+                <p class="price-current"><sup>$</sup>297</p>
+                <p class="price-note">One-time payment - Lifetime access</p>
+
+                <div class="pricing-features">
+                    <div class="pricing-feature">
+                        <span>&#10003;</span>
+                        <p>30 Daily Missions & Coaching Letters</p>
+                    </div>
+                    <div class="pricing-feature">
+                        <span>&#10003;</span>
+                        <p>60-Day WarriorApp Access</p>
+                    </div>
+                    <div class="pricing-feature">
+                        <span>&#10003;</span>
+                        <p>Lifetime Facebook Community Access</p>
+                    </div>
+                    <div class="pricing-feature">
+                        <span>&#10003;</span>
+                        <p>6 Complete WarriorBox Audiobooks</p>
+                    </div>
+                    <div class="pricing-feature">
+                        <span>&#10003;</span>
+                        <p>Bonus Training Videos & Resources</p>
+                    </div>
+                </div>
+
+                <a href="#" class="cta-button pulse">HELL YES! I AM ALL IN!</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="final-cta">
+        <div class="container">
+            <h2>Ready To <span>Activate</span> Your Power?</h2>
+            <p>Join 11,308+ warriors who have transformed their lives. Your breakthrough starts today.</p>
+            <a href="#pricing" class="cta-button pulse">Get Started NOW!</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="#">Terms of Service</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">EULA</a>
+                <a href="#">Contact</a>
+            </div>
+            <p class="copyright">&copy; 2024 Wake Up Warrior. All Rights Reserved.</p>
+            <p class="footer-disclaimer">This site is not a part of the Facebook website or Facebook Inc. Additionally, this site is NOT endorsed by Facebook in any way. FACEBOOK is a trademark of FACEBOOK, Inc. Results may vary. The testimonials shown are real experiences from actual customers. However, these results should not be taken as typical, and your results may vary based on your individual circumstances, effort, and commitment.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Simple animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.feature-card, .testimonial-card, .included-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
