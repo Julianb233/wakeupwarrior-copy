@@ -1,0 +1,69 @@
+{
+  "name": "Claude Deliverables to Slack",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "claude-deliverables",
+        "responseMode": "onReceived",
+        "options": {}
+      },
+      "id": "webhook-trigger",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [250, 300]
+    },
+    {
+      "parameters": {
+        "channel": "={{ $json.body.channel || 'general' }}",
+        "text": "New deliverable from Claude",
+        "attachments": [
+          {
+            "color": "#4A154B",
+            "title": "={{ $json.body.title }}",
+            "title_link": "={{ $json.body.url }}",
+            "text": "={{ $json.body.description }}",
+            "fields": [
+              {
+                "title": "Type",
+                "value": "={{ $json.body.type || 'Deliverable' }}",
+                "short": true
+              },
+              {
+                "title": "Created",
+                "value": "={{ $now.format('yyyy-MM-dd HH:mm') }}",
+                "short": true
+              }
+            ],
+            "footer": "Claude Code Agent"
+          }
+        ]
+      },
+      "id": "slack-message",
+      "name": "Send Slack Message",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2,
+      "position": [500, 300]
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            { "name": "success", "value": "true" },
+            { "name": "message", "value": "Deliverable posted to Slack" }
+          ]
+        }
+      },
+      "id": "response",
+      "name": "Response",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 2,
+      "position": [750, 300]
+    }
+  ],
+  "connections": {
+    "Webhook": { "main": [[{ "node": "Send Slack Message", "type": "main", "index": 0 }]] },
+    "Send Slack Message": { "main": [[{ "node": "Response", "type": "main", "index": 0 }]] }
+  }
+}
